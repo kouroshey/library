@@ -7,6 +7,7 @@ import { user } from "@/constants/users";
 import React, { useState } from "react";
 import { verifyLoginAction } from "../actions";
 import SmsIcon from "@/components/icons/sms";
+import { cn } from "@/lib/utils";
 
 export interface LoginParams {
   email: string;
@@ -30,7 +31,12 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="h-5/6 w-full md:w-[80%] bg-white p-8 flex flex-col gap-16 rounded-lg">
+    <div
+      className={cn(
+        "h-5/6 w-full bg-white p-8 flex flex-col gap-16 rounded-lg overflow-y-scroll",
+        "md:w-[80%] md:overflow-y-hidden",
+      )}
+    >
       <div className="flex flex-col items-center gap-2">
         <p className="text-2xl">Welcome to</p>
         <h1 className="text-primary text-4xl font-bold">Online Library</h1>
