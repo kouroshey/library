@@ -20,7 +20,8 @@ export async function verifyLoginAction(
     } else {
       return { error: "Invalid email or password" };
     }
-  } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (_) {
     return { error: "An unexpected error occurred" };
   }
 }
