@@ -64,7 +64,12 @@ const LoginForm = () => {
             <span className="text-gray-400">password: {user.password}</span>
           </div>
         </div>
-        <Button className="rounded-lg py-6">Login</Button>
+        <Button
+          isDisable={!email || !password || !!emailError || !!passwordError}
+          className="rounded-lg py-6"
+        >
+          Login
+        </Button>
       </form>
     </div>
   );
