@@ -21,12 +21,12 @@ const LoginForm = () => {
   const [passwordShow, setPasswordShow] = useState(false);
   const [error, setError] = useState("");
 
-  const onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    verifyLoginAction({ email, password }).catch((error) => {
-      console.log(error);
-      setError(error.message);
-    });
+    const result = await verifyLoginAction({ email, password });
+    if (result.error) {
+      setError(result.error);
+    }
   };
 
   return (
