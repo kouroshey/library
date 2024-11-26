@@ -14,5 +14,7 @@ export async function verifyLoginAction(params: LoginParams) {
       maxAge: 900000000000000,
     });
     redirect(routes.home);
+  } else {
+    throw new Error("Invalid email or password");
   }
 }

@@ -19,10 +19,14 @@ const LoginForm = () => {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [passwordShow, setPasswordShow] = useState(false);
+  const [error, setError] = useState("");
 
   const onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    verifyLoginAction({ email, password });
+    verifyLoginAction({ email, password }).catch((error) => {
+      console.log(error);
+      setError(error.message);
+    });
   };
 
   return (
@@ -30,6 +34,7 @@ const LoginForm = () => {
       <div className="flex flex-col items-center gap-2">
         <p className="text-2xl">Welcome to</p>
         <h1 className="text-primary text-4xl font-bold">Online Library</h1>
+        {error && <p className="text-red-500">{error}</p>}
       </div>
       <form
         onSubmit={onFormSubmit}
