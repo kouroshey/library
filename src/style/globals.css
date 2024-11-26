@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* fonts */
+body {
+  font-family: var(--font-vazir), Arial;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* 8976FD */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --primary: 246 97% 73%;
+    --secondary: 42 98% 52%;
+    --muted: 240 4.8% 95.9%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --info: 214 84% 56% --success: 145 63% 42%;
+    --warning: 44 75% 56%;
+    --error: 0 80% 63%;
+
+    /* primary shades */
+    --primary-50: 245 100% 97%;
+    --primary-100: 244 100% 94%;
+    --primary-200: 246 100% 89%;
+    --primary-300: 248 100% 83%;
+    --primary-400: 254 94% 72%;
+    --primary-500: 254 94% 65%;
+    --primary-600: 254 89% 60%;
+    --primary-700: 254 72% 51%;
+    --primary-800: 255 70% 43%;
+    --primary-900: 256 69% 35%;
+    --primary-950: 256 75% 23%;
+
+    /* secondary shades */
+    --secondary-50: 53 100% 96%;
+    --secondary-100: 53 100% 89%;
+    --secondary-200: 53 100% 75%;
+    --secondary-300: 53 100% 63%;
+    --secondary-400: 48 100% 55%;
+    --secondary-500: 42 98% 52%;
+    --secondary-600: 39 100% 44%;
+    --secondary-700: 30 96% 38%;
+    --secondary-800: 28 89% 32%;
+    --secondary-900: 25 83% 27%;
+    --secondary-950: 25 96% 14%;
+
+    /* text shades */
+    --text-grey: 248 36% 27%;
+    --text-haze: 233 29% 35%;
+    --text-mid-gray: 248 15% 41%;
+  }
+  .dark {
+    --background: 240 10% 3.9%;
+    --popover: 240 10% 3.9%;
+    --primary: 35 98% 57%;
+    --secondary: 42 98% 52%;
+    --muted: 240 3.7% 15.9%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --info: 213 84% 45%;
+    --success: 145 63% 35%;
+    --warning: 44 75% 46%;
+    --error: 0 80% 53%;
+
+    /* primary shades - adjust these for dark mode */
+    --primary-50: 256 75% 23%;
+    --primary-100: 256 69% 35%;
+    --primary-200: 255 70% 43%;
+    --primary-300: 254 72% 51%;
+    --primary-400: 254 89% 60%;
+    --primary-500: 254 94% 65%;
+    --primary-600: 254 94% 72%;
+    --primary-700: 248 100% 83%;
+    --primary-800: 246 100% 89%;
+    --primary-900: 244 100% 94%;
+    --primary-950: 245 100% 97%;
+
+    /* secondary shades - adjust these for dark mode */
+    --secondary-50: 25 96% 14%;
+    --secondary-100: 25 83% 27%;
+    --secondary-200: 28 89% 32%;
+    --secondary-300: 30 96% 38%;
+    --secondary-400: 39 100% 44%;
+    --secondary-500: 42 98% 52%;
+    --secondary-600: 48 100% 55%;
+    --secondary-700: 53 100% 63%;
+    --secondary-800: 53 100% 75%;
+    --secondary-900: 53 100% 89%;
+    --secondary-950: 53 100% 96%;
+
+    /* text shades - adjust these for dark mode */
+    --text-grey: 248 36% 87%;
+    --text-haze: 233 29% 85%;
+    --text-mid-gray: 248 15% 81%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

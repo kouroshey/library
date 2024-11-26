@@ -1,0 +1,21 @@
+{
+  "version": "0.2",
+  "language": "fa,en",
+  "useGitignore": true,
+  "import": [
+    "@cspell/dict-fa-ir/cspell-ext.json"
+  ],
+  "ignorePaths": [
+    "node_modules"
+  ],
+  "dictionaryDefinitions": [
+    {
+      "name": "keywords",
+      "description": "Project keywords",
+      "path": "./keywords.txt"
+    }
+  ],
+  "dictionaries": [
+    "keywords"
+  ]
+}
