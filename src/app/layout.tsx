@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 import "@/style/globals.css";
-import { vazir } from "@/fonts/vazir/vazir";
+import { Outfit } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+});
 
 export const metadata: Metadata = {
-  title: "کتابخانه مجازی",
+  title: "online library",
 };
 
 export default function RootLayout({
@@ -12,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html dir="rtl" lang="fa">
-      <body className={`${vazir.variable}`}>{children}</body>
+    <html lang="en">
+      <body className={cn(outfit.variable, "font-outfit")}>{children}</body>
     </html>
   );
 }

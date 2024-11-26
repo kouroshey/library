@@ -7,7 +7,7 @@ export interface User {
 
 export const user: User = {
   id: "1",
-  name: "سارا محمدی",
-  email: "test@test.com",
+  name: "Sara Johnson",
+  email: "test@example.com",
   password: "test",
 };

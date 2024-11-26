@@ -6,6 +6,7 @@ import PasswordInput from "@/components/input/password-input";
 import { user } from "@/constants/users";
 import React, { useState } from "react";
 import { verifyLoginAction } from "../actions";
+import SmsIcon from "@/components/icons/sms";
 
 export interface LoginParams {
   email: string;
@@ -25,15 +26,10 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="h-5/6 w-4/6 bg-white p-8 flex flex-col gap-16 rounded-lg">
+    <div className="h-5/6 w-full md:w-[80%] bg-white p-8 flex flex-col gap-16 rounded-lg">
       <div className="flex flex-col items-center gap-2">
-        <p className="text-2xl">خوش آمدید به</p>
-        <h1 className="text-primary text-4xl font-bold">کتابخانه مجازی</h1>
-        <div className="flex flex-col gap-1 items-center">
-          <span>تست</span>
-          <span className="text-gray-400">ایمیل: {user.email}</span>
-          <span className="text-gray-400">پسورد: {user.password}</span>
-        </div>
+        <p className="text-2xl">Welcome to</p>
+        <h1 className="text-primary text-4xl font-bold">Online Library</h1>
       </div>
       <form
         onSubmit={onFormSubmit}
@@ -41,19 +37,20 @@ const LoginForm = () => {
       >
         <div className="flex flex-col gap-4">
           <Input
-            label="ایمیل"
-            placeholder="لطفا ایمیل خود را وارد کنید"
+            label="Email"
+            placeholder="your email..."
             name="email"
             type="email"
             onError={setEmailError}
             setValue={setEmail}
             value={email}
             error={emailError}
+            icon={<SmsIcon />}
           />
           <PasswordInput
-            label="رمز عبور"
+            label="Password"
             name="password"
-            placeholder="لطفا رمز عبور خود را وارد کنید"
+            placeholder="your password..."
             passwordShow={passwordShow}
             setValue={setPassword}
             value={password}
@@ -61,8 +58,13 @@ const LoginForm = () => {
             error={passwordError}
             onError={setPasswordError}
           />
+          <div className="flex flex-col gap-1 items-center">
+            <span>test</span>
+            <span className="text-gray-400">email: {user.email}</span>
+            <span className="text-gray-400">password: {user.password}</span>
+          </div>
         </div>
-        <Button className="rounded-lg py-6">ورود </Button>
+        <Button className="rounded-lg py-6">Login</Button>
       </form>
     </div>
   );
